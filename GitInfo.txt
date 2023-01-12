@@ -1,0 +1,76 @@
+da non dimenticare
+Per spostarti da una cartella all'altra: CD D:\Progetti_JS\GIT {CD nuova cartella}
+working area --(git add)--> staging area --(git commit)--> commit
+Il primo commit deve essere chiamato, come buona regola "inizial commit"
+comandi Git
+
+git init                                                crea il repository
+git -- version                                          mostra la versione
+git config -l                                           mostra le configurazioni
+git config --global -l                                  mostra le configurazioni globali
+git config --local -l                                   mostra le configurazioni locali
+git config --local nome.parametro "valore"              inserisce un nuovo parametro
+git config --local nome.parametro                       mostra il valore del parametro
+git clone URL della directory remota                    clona un progetto sul tuo dispositivo per poter lavorare
+git status                                              mostra lo stato dei file nella cartella di lavoro
+git add .                                               mette nella sezione di "pronto" tutti i file della cartella
+git add nome.file                                       mette nella sezione di "pronto" il file indicato (se modifichi il file ripeti il comando)
+git commit                                              effettua il commit
+git log                                                 mostra i commit creati
+git log -n 1                                            mostra solo l'ultimo commit
+git log -oneline                                        mostra il commit su un'unica riga
+git log --graph --decorate --oneline a8sa9f3            primi 7 caratteri del commit per identificarlo
+git log --graph="Parola nel titolo del commit"          cerca in base al testo del commento del commit
+git commit -m "Commento del commit"                     crea direttamente il commit con il commento senza l'inserimento postumo
+git commit -a                                           salta la stageing area e passa direttamente al commit
+git commit -a -m "Commento del commit"                  crea direttamente il commit saltando la  area con il commento senza l'inserimento postumo
+git commit --amend                                      permette di apportare una modifica al commit appena giteseguito senza doverne creare uno nuovo
+git diff                                                permette di vedere quali modifiche sono state apportate ai file
+git show primi7caratteridelcommit                       mostra le variazioni effettuate in un commit
+
+Le modifiche effettuate e committate in un branch spostano i file in quel branch non permettendone la visualizzazione in altri branch.
+è possibile ignorare alcuni file rendendoli quindi "privati" e quindi non inseribili nel commit. Per farlo bisogna cerare un file ".gitignore" ed inserire i nomi dei file come testo li dentro.
+Il file .gitignore verrà invece committato come tutti gli altri
+
+git branch nome-branch                                  crea un nuovo ramo di lavoro
+git branch                                              mostra l'elenco dei branch presenti sul dispositivo in uso
+git branch -d nome-branch                               rimuove un branch
+git branch -r                                           visualizza i branch remoti del repository scaricato
+git branch -m vecchio.nome nuovo.nome			rinomina un Branch
+git checkout nome-branch                                ci permette di cambiare branch in uso
+git checkout -b nome-branch                             crea un nuovo branch e ti sposta direttamente li 
+git checkout primi7caratteridelcommit                   ci permette di lavorare con un commit precedente così da poter creare un branch da quel punto o aggiungere funzionalità
+git checkout master (dopo aver cambiato commit)         riporta il programma sul commit principale
+
+git restore nomefile (se metti . è per tutti i file)    cancella le modifiche dei file selezionati e ancora non presenti nella staging area
+git restore --staged nomefile (o . per tutti)           cancella i file presenti e selezionati nella staging riportandoli nella working area
+git reset primi7caratteridelcommit                      ti riporta al commit selezionato eliminando tutte le modifiche successive MANTENENDO I FILE NELLA WORKING AREA
+git reset --soft primi7caratteridelcommit               ti riporta al commit selezionato eliminando tutte le modifiche successive MANTENENDO I FILE IN STANGING AREA 
+git reset --hard primi7caratteridelcommit               ti riporta al commit selezionato eliminando DEFINITIVAMENTE tutte le modifiche successive
+git revert HEAD                                         permette di invertire il commit di testa: creerà un nuovo commit il cui inserimento consiste nella rimozione di ciò che è stato aggiunto o nel reinserimento di ciò che è stato rimosso
+
+Il merge (l'unione le delle linee di diversi branch) va fatto sempre dal branch in cui si intende unire i dati.
+git merge nome-branch-avanzato                          aggiunge i commit e i dati al branch dalla quale si effettua il comando
+
+git remote                                              fornisce l'origine del repository remoto che abbiamo scaricato (e permette eventuali modifiche con aggiunte di ulteriori comandi)
+git remote -v                                           fornisce più informazioni sull'origine del repository remoto
+git fetch                                               verifica se in remoto ci sono nuovi branch o file non presenti nella copia locale e lo aggiorna 
+NOTA BENE non sarà ancora visibile ma con il checkout sarà possibile andare a lavorare comunque su uno di quei branch remoti e anche i file non verranno inseriti fino a quando non verrà fatto il merge con origin/NOME-BRANCH 
+
+git pull                                                scarica ed esegue automaticamente il merge dei file dal repository remoto a quello locale (come fetch ma senza la necessità di fare il merge a parte)
+git pull --all                                          scarica ed esegue le modifiche di tutti i branch
+git push origin                                         carica nel server remoto le nostre modifiche locali
+git push --all                                          carica nel server remoto le modifiche di tutti i branch (attinenti all'origine sulla quale stiamo lavorando) locali
+NOTA BENE Se il repository locale e quello remoto non sono allineati, git non potrà effettuare il push. La procedura diventa la seguente:
+        1. Eseguire il pull
+        2. Creare un commit di merge
+        3. Eseguire il push
+
+
+
+
+Comandi vim
+i                               modalità di inserimento testo
+Tasto Esc                       uscire dalla modalitàdi inserimento testo
+:wq                             salva ed esci 
+:q!                             esci senza salvare
