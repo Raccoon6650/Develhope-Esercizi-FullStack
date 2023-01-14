@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>HTML Lesson</title>
+    <style>
+      label {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <label for="email">*Email:</label>
+      <input type="email" id="email" name="email" placeholder="exemple@exemple" required><br>
+      <label for="pwd">*Password:</label>
+      <input type="password" id="pwd" name="pwd" placeholder="Ai&8jS9I" minlength="8" maxlength="20" required><br>
+      <label for="name">*Name and Lastname:</label>
+      <input type="text" id="name" name="name" placeholder="Mario Rossi" required><br>
+      <label for="birth">*Birth:</label>
+      <input type="date" id="birth" name="birth" required><br>
+      <label for="text">*Telephone number:</label>
+      <input type="text" id="tel" name="tel" minlength="12" maxlength="13" placeholder="+393380000000" required><br>
+      <label for="plan">*Subscribe plan</label>
+      <select name="plan" id="plan" required>
+        <option value="none" disabled>Select a Plan</option>
+        <option value="free">Free Plan</option>
+        <option value="basic">Basic Plan 4,99$/month</option>
+        <option value="Power">Power Plan 9,99$/month</option>
+        <option value="VIP">VIP Plan 14,99$/month <input type="checkbox"> Subscribe VIP?</option>
+      </select> <br>
+      <label for="text">*Credit Card Number:</label>
+      <table border="0">
+        <tr>
+          <td><input type="text" id="c1" name="c1" minlength="4" maxlength="4" placeholder="0000" required> </td>
+          <td><input type="text" id="c2" name="c2" minlength="4" maxlength="4" placeholder="0000" required></td>
+          <td><input type="text" id="c3" name="c3" minlength="4" maxlength="4" placeholder="0000" required></td>
+          <td><input type="text" id="c4" name="c4" minlength="4" maxlength="4" placeholder="0000" required></td>
+        </tr>
+      </table>
+      <label for="cvc">CVC</label>
+      <input type="text" id="cvc" name="cvc" minlength="3" maxlength="4" placeholder="000" required></td>
+      <label for="exdate">Expiration date:</label>
+      <input type="date" id="exdate" name="exdate" ><br>
+      <label for="billing.add">*Billing Address:</label>
+      <table border="0">
+        <tr>
+          <td><input type="text" id="street" name="street" placeholder="First Street" required></td>
+          <td><input type="text" id="number" name="number" placeholder="1234" required></td>
+          <td><input type="text" id="city" name="city" placeholder="London" required></td>
+        </tr>
+      </table><br>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
